@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E6987DB02040C472002FAC5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6987DAF2040C472002FAC5B /* AppDelegate.swift */; };
+		E6987DB22040C472002FAC5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6987DB12040C472002FAC5B /* ViewController.swift */; };
+		E6987DB42040C472002FAC5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6987DB32040C472002FAC5B /* Assets.xcassets */; };
+		E6987DB72040C472002FAC5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6987DB52040C472002FAC5B /* Main.storyboard */; };
+		E6987DC32040C472002FAC5B /* HuePlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6987DC22040C472002FAC5B /* HuePlaygroundTests.swift */; };
+		E6987DCE2040C472002FAC5B /* HuePlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6987DCD2040C472002FAC5B /* HuePlaygroundUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E6987DBF2040C472002FAC5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6987DA42040C472002FAC5B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6987DAB2040C472002FAC5B;
+			remoteInfo = HuePlayground;
+		};
+		E6987DCA2040C472002FAC5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6987DA42040C472002FAC5B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6987DAB2040C472002FAC5B;
+			remoteInfo = HuePlayground;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E6987DAC2040C472002FAC5B /* HuePlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HuePlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6987DAF2040C472002FAC5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E6987DB12040C472002FAC5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E6987DB32040C472002FAC5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E6987DB62040C472002FAC5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E6987DB82040C472002FAC5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6987DB92040C472002FAC5B /* HuePlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HuePlayground.entitlements; sourceTree = "<group>"; };
+		E6987DBE2040C472002FAC5B /* HuePlaygroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HuePlaygroundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6987DC22040C472002FAC5B /* HuePlaygroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuePlaygroundTests.swift; sourceTree = "<group>"; };
+		E6987DC42040C472002FAC5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6987DC92040C472002FAC5B /* HuePlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HuePlaygroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6987DCD2040C472002FAC5B /* HuePlaygroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuePlaygroundUITests.swift; sourceTree = "<group>"; };
+		E6987DCF2040C472002FAC5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E6987DA92040C472002FAC5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6987DBB2040C472002FAC5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6987DC62040C472002FAC5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E6987DA32040C472002FAC5B = {
+			isa = PBXGroup;
+			children = (
+				E6987DAE2040C472002FAC5B /* HuePlayground */,
+				E6987DC12040C472002FAC5B /* HuePlaygroundTests */,
+				E6987DCC2040C472002FAC5B /* HuePlaygroundUITests */,
+				E6987DAD2040C472002FAC5B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E6987DAD2040C472002FAC5B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6987DAC2040C472002FAC5B /* HuePlayground.app */,
+				E6987DBE2040C472002FAC5B /* HuePlaygroundTests.xctest */,
+				E6987DC92040C472002FAC5B /* HuePlaygroundUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E6987DAE2040C472002FAC5B /* HuePlayground */ = {
+			isa = PBXGroup;
+			children = (
+				E6987DAF2040C472002FAC5B /* AppDelegate.swift */,
+				E6987DB12040C472002FAC5B /* ViewController.swift */,
+				E6987DB32040C472002FAC5B /* Assets.xcassets */,
+				E6987DB52040C472002FAC5B /* Main.storyboard */,
+				E6987DB82040C472002FAC5B /* Info.plist */,
+				E6987DB92040C472002FAC5B /* HuePlayground.entitlements */,
+			);
+			path = HuePlayground;
+			sourceTree = "<group>";
+		};
+		E6987DC12040C472002FAC5B /* HuePlaygroundTests */ = {
+			isa = PBXGroup;
+			children = (
+				E6987DC22040C472002FAC5B /* HuePlaygroundTests.swift */,
+				E6987DC42040C472002FAC5B /* Info.plist */,
+			);
+			path = HuePlaygroundTests;
+			sourceTree = "<group>";
+		};
+		E6987DCC2040C472002FAC5B /* HuePlaygroundUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E6987DCD2040C472002FAC5B /* HuePlaygroundUITests.swift */,
+				E6987DCF2040C472002FAC5B /* Info.plist */,
+			);
+			path = HuePlaygroundUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E6987DAB2040C472002FAC5B /* HuePlayground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6987DD22040C472002FAC5B /* Build configuration list for PBXNativeTarget "HuePlayground" */;
+			buildPhases = (
+				E6987DA82040C472002FAC5B /* Sources */,
+				E6987DA92040C472002FAC5B /* Frameworks */,
+				E6987DAA2040C472002FAC5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HuePlayground;
+			productName = HuePlayground;
+			productReference = E6987DAC2040C472002FAC5B /* HuePlayground.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E6987DBD2040C472002FAC5B /* HuePlaygroundTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6987DD52040C472002FAC5B /* Build configuration list for PBXNativeTarget "HuePlaygroundTests" */;
+			buildPhases = (
+				E6987DBA2040C472002FAC5B /* Sources */,
+				E6987DBB2040C472002FAC5B /* Frameworks */,
+				E6987DBC2040C472002FAC5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6987DC02040C472002FAC5B /* PBXTargetDependency */,
+			);
+			name = HuePlaygroundTests;
+			productName = HuePlaygroundTests;
+			productReference = E6987DBE2040C472002FAC5B /* HuePlaygroundTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E6987DC82040C472002FAC5B /* HuePlaygroundUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6987DD82040C472002FAC5B /* Build configuration list for PBXNativeTarget "HuePlaygroundUITests" */;
+			buildPhases = (
+				E6987DC52040C472002FAC5B /* Sources */,
+				E6987DC62040C472002FAC5B /* Frameworks */,
+				E6987DC72040C472002FAC5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6987DCB2040C472002FAC5B /* PBXTargetDependency */,
+			);
+			name = HuePlaygroundUITests;
+			productName = HuePlaygroundUITests;
+			productReference = E6987DC92040C472002FAC5B /* HuePlaygroundUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E6987DA42040C472002FAC5B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Benjamin Newcomer";
+				TargetAttributes = {
+					E6987DAB2040C472002FAC5B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					E6987DBD2040C472002FAC5B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E6987DAB2040C472002FAC5B;
+					};
+					E6987DC82040C472002FAC5B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E6987DAB2040C472002FAC5B;
+					};
+				};
+			};
+			buildConfigurationList = E6987DA72040C472002FAC5B /* Build configuration list for PBXProject "HuePlayground" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E6987DA32040C472002FAC5B;
+			productRefGroup = E6987DAD2040C472002FAC5B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E6987DAB2040C472002FAC5B /* HuePlayground */,
+				E6987DBD2040C472002FAC5B /* HuePlaygroundTests */,
+				E6987DC82040C472002FAC5B /* HuePlaygroundUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E6987DAA2040C472002FAC5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6987DB42040C472002FAC5B /* Assets.xcassets in Resources */,
+				E6987DB72040C472002FAC5B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6987DBC2040C472002FAC5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6987DC72040C472002FAC5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E6987DA82040C472002FAC5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6987DB22040C472002FAC5B /* ViewController.swift in Sources */,
+				E6987DB02040C472002FAC5B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6987DBA2040C472002FAC5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6987DC32040C472002FAC5B /* HuePlaygroundTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6987DC52040C472002FAC5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6987DCE2040C472002FAC5B /* HuePlaygroundUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E6987DC02040C472002FAC5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6987DAB2040C472002FAC5B /* HuePlayground */;
+			targetProxy = E6987DBF2040C472002FAC5B /* PBXContainerItemProxy */;
+		};
+		E6987DCB2040C472002FAC5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6987DAB2040C472002FAC5B /* HuePlayground */;
+			targetProxy = E6987DCA2040C472002FAC5B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E6987DB52040C472002FAC5B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6987DB62040C472002FAC5B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E6987DD02040C472002FAC5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E6987DD12040C472002FAC5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		E6987DD32040C472002FAC5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HuePlayground/HuePlayground.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HuePlayground/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = bnewcomer.HuePlayground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		E6987DD42040C472002FAC5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HuePlayground/HuePlayground.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HuePlayground/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = bnewcomer.HuePlayground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		E6987DD62040C472002FAC5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HuePlaygroundTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = bnewcomer.HuePlaygroundTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HuePlayground.app/Contents/MacOS/HuePlayground";
+			};
+			name = Debug;
+		};
+		E6987DD72040C472002FAC5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HuePlaygroundTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = bnewcomer.HuePlaygroundTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HuePlayground.app/Contents/MacOS/HuePlayground";
+			};
+			name = Release;
+		};
+		E6987DD92040C472002FAC5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HuePlaygroundUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = bnewcomer.HuePlaygroundUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = HuePlayground;
+			};
+			name = Debug;
+		};
+		E6987DDA2040C472002FAC5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HuePlaygroundUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = bnewcomer.HuePlaygroundUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = HuePlayground;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E6987DA72040C472002FAC5B /* Build configuration list for PBXProject "HuePlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6987DD02040C472002FAC5B /* Debug */,
+				E6987DD12040C472002FAC5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6987DD22040C472002FAC5B /* Build configuration list for PBXNativeTarget "HuePlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6987DD32040C472002FAC5B /* Debug */,
+				E6987DD42040C472002FAC5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6987DD52040C472002FAC5B /* Build configuration list for PBXNativeTarget "HuePlaygroundTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6987DD62040C472002FAC5B /* Debug */,
+				E6987DD72040C472002FAC5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6987DD82040C472002FAC5B /* Build configuration list for PBXNativeTarget "HuePlaygroundUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6987DD92040C472002FAC5B /* Debug */,
+				E6987DDA2040C472002FAC5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E6987DA42040C472002FAC5B /* Project object */;
+}
