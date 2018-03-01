@@ -724,11 +724,49 @@
                     </view>
                     <connections>
                         <segue destination="3ei-X2-FHA" kind="sheet" identifier="showSetupView" id="aOi-p5-xco"/>
+                        <segue destination="ug4-J1-snX" kind="sheet" identifier="showBridgeConnectionView" id="tbh-pP-F6S"/>
                     </connections>
                 </viewController>
                 <customObject id="Qel-ud-LBf" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="713" y="244"/>
+        </scene>
+        <!--Bridge Connection View Controller-->
+        <scene sceneID="OqW-MQ-ehN">
+            <objects>
+                <viewController id="ug4-J1-snX" customClass="BridgeConnectionViewController" customModule="HuePlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="NQh-We-qN7">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZQF-lK-r89">
+                                <rect key="frame" x="20" y="134" width="410" height="20"/>
+                            </progressIndicator>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wTU-Os-SCN">
+                                <rect key="frame" x="18" y="173" width="414" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Connecting to bridge. Press the link button on your bridge." id="8YB-BS-pLg">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="wTU-Os-SCN" firstAttribute="top" secondItem="NQh-We-qN7" secondAttribute="top" constant="110" id="BOl-8g-K8r"/>
+                            <constraint firstAttribute="trailing" secondItem="ZQF-lK-r89" secondAttribute="trailing" constant="20" id="JpL-es-xAS"/>
+                            <constraint firstItem="ZQF-lK-r89" firstAttribute="top" secondItem="wTU-Os-SCN" secondAttribute="bottom" constant="20" id="WjU-e9-m1X"/>
+                            <constraint firstItem="ZQF-lK-r89" firstAttribute="leading" secondItem="NQh-We-qN7" secondAttribute="leading" constant="20" id="dOr-hp-3YH"/>
+                            <constraint firstItem="wTU-Os-SCN" firstAttribute="leading" secondItem="NQh-We-qN7" secondAttribute="leading" constant="20" id="izI-5h-4kO"/>
+                            <constraint firstAttribute="trailing" secondItem="wTU-Os-SCN" secondAttribute="trailing" constant="20" id="xgv-0d-xa7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressIndicator" destination="ZQF-lK-r89" id="Qee-d9-YnH"/>
+                    </connections>
+                </viewController>
+                <customObject id="u0P-06-64k" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="713" y="709"/>
         </scene>
         <!--Setup View Controller-->
         <scene sceneID="jZA-BK-6oV">
@@ -854,7 +892,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="wbP-vJ-63t">
+                            <progressIndicator wantsLayer="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="wbP-vJ-63t">
                                 <rect key="frame" x="364" y="19" width="87" height="20"/>
                             </progressIndicator>
                             <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C4N-8H-aFW">

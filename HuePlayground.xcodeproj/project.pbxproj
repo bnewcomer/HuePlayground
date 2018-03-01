@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E621D54C20488BF400488B54 /* BridgeBuilderUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E621D54B20488BF400488B54 /* BridgeBuilderUtil.swift */; };
+		E621D55220488CD300488B54 /* BridgePersistenceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E621D55120488CD300488B54 /* BridgePersistenceUtil.swift */; };
+		E621D55420488DCF00488B54 /* BridgeConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E621D55320488DCF00488B54 /* BridgeConnectionViewController.swift */; };
 		E627403A2046019400629802 /* BridgeDiscoveryUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62740392046019400629802 /* BridgeDiscoveryUtil.swift */; };
 		E636448A20421535009987E3 /* HueSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E636448920421535009987E3 /* HueSDK.framework */; };
 		E636448B20421535009987E3 /* HueSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E636448920421535009987E3 /* HueSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -81,6 +84,9 @@
 
 /* Begin PBXFileReference section */
 		E60C8AE420479C3A0045EEC3 /* SwiftSSDP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSSDP.xcodeproj; path = ../SwiftSSDP/SwiftSSDP.xcodeproj; sourceTree = "<group>"; };
+		E621D54B20488BF400488B54 /* BridgeBuilderUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeBuilderUtil.swift; sourceTree = "<group>"; };
+		E621D55120488CD300488B54 /* BridgePersistenceUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgePersistenceUtil.swift; sourceTree = "<group>"; };
+		E621D55320488DCF00488B54 /* BridgeConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeConnectionViewController.swift; sourceTree = "<group>"; };
 		E62740392046019400629802 /* BridgeDiscoveryUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeDiscoveryUtil.swift; sourceTree = "<group>"; };
 		E636448220421160009987E3 /* libHueSDK.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libHueSDK.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		E636448920421535009987E3 /* HueSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HueSDK.framework; sourceTree = "<group>"; };
@@ -150,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				E62740392046019400629802 /* BridgeDiscoveryUtil.swift */,
+				E621D54B20488BF400488B54 /* BridgeBuilderUtil.swift */,
+				E621D55120488CD300488B54 /* BridgePersistenceUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -159,6 +167,7 @@
 			children = (
 				E636449120421963009987E3 /* LightsViewController.swift */,
 				E63644932042197E009987E3 /* SetupViewController.swift */,
+				E621D55320488DCF00488B54 /* BridgeConnectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -444,7 +453,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E621D54C20488BF400488B54 /* BridgeBuilderUtil.swift in Sources */,
+				E621D55220488CD300488B54 /* BridgePersistenceUtil.swift in Sources */,
 				E63644942042197E009987E3 /* SetupViewController.swift in Sources */,
+				E621D55420488DCF00488B54 /* BridgeConnectionViewController.swift in Sources */,
 				E627403A2046019400629802 /* BridgeDiscoveryUtil.swift in Sources */,
 				E636449220421963009987E3 /* LightsViewController.swift in Sources */,
 				E6F8BB6C204378BC0051D741 /* PHSBridgeInfo.swift in Sources */,

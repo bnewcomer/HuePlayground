@@ -11,13 +11,11 @@ import Cocoa
 class LightsViewController: NSViewController {
     
     // variable to reference the current bridge
-    var bridge: PHSBridge!
-    
-    // reference to bridge info selected from setup view
-    var selectedBridgeInfo: PHSBridgeInfo?
-    
-    // segue identifier for segueing to the setup view
+    var bridge: PHSBridge?
+
+    // segue identifiers
     let SetupViewSegueIdentifier: NSStoryboardSegue.Identifier = .init(rawValue: "showSetupView")
+    let BridgeConnectionSegueIdentifier: NSStoryboardSegue.Identifier = .init(rawValue: "showBridgeConnectionView")
     
     //MARK: Actions
     
@@ -34,22 +32,11 @@ class LightsViewController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         configureSDK()
-        
-        // if there is a selected bridge, connect
-        // to that one
-        if let bridgeInfo = selectedBridgeInfo {
-            print("attempting to connect to selected bridge")
-            bridge = self.buildBridge(with: bridgeInfo)
-            bridge.connect()
-            return
-        }
-        
         // if there is a saved last connected bridge,
         // connect to it
-        if let bridgeInfo = getLastConnectedBridgeInfo() {
+        if let bridgeInfo = BridgePersistenceUtil.getLastConnectedBridgeInfo() {
             print("attempting to connect to last connected bridge")
-            bridge = self.buildBridge(with: bridgeInfo)
-            bridge.connect()
+            BridgeBuilderUtil.buildBridge(with: bridgeInfo, sender: self).connect()
             return
         }
         
@@ -62,28 +49,19 @@ class LightsViewController: NSViewController {
      Configures the Phillips Hue persistence object
      */
     func configureSDK() {
-        PHSPersistence.setStorageLocation(NSHomeDirectory(), andDeviceId: "phillipshueplayground")
+        BridgePersistenceUtil.configure()
         PHSLog.setConsoleLogLevel(.debug)
-        print("configured PHS storage location and set console level")
     }
     
-    /**
-        Returns the last connected bridge or nil
-    */
-    func getLastConnectedBridgeInfo() -> PHSBridgeInfo? {
-        guard let knownBridges: [PHSKnownBridge] = PHSKnownBridges.getAll() else {
-            return nil
-        }
+    func buildAndConnect(with bridgeInfo: PHSBridgeInfo, sender: NSViewController?) {
+        // build
+        let bridge = BridgeBuilderUtil.buildBridge(with: bridgeInfo, sender: self)
+        if sender != nil { dismissViewController(sender!) }
         
-        let sortedBridges = knownBridges.sorted { (bridgeA, bridgeB) -> Bool in
-            return bridgeA.lastConnected < bridgeB.lastConnected
-        }
-        
-        // return info for last known bridge or nil
-        if let lastKnownBridge = sortedBridges.first {
-            return PHSBridgeInfo(ipAddress: lastKnownBridge.ipAddress, uid: lastKnownBridge.uniqueId)
-        }
-        return nil
+        // connect
+        performSegue(withIdentifier: BridgeConnectionSegueIdentifier, sender: self)
+        bridge.connect()
+        //TODO: dismissViewController once bridge is connected
     }
     
     /**
@@ -92,20 +70,6 @@ class LightsViewController: NSViewController {
     */
     func handleAuthenticationFailure() {
         self.performSegue(withIdentifier: SetupViewSegueIdentifier, sender: self)
-    }
-    
-    /**
-        Factory for creating a PHSBridge from an instance
-        of PHSBridgeInfo
-    */
-    func buildBridge(with info: PHSBridgeInfo) -> PHSBridge {
-        return PHSBridge.init(block: { (builder) in
-            builder?.connectionTypes = .local
-            builder?.ipAddress = info.ipAddress
-            builder?.bridgeID = info.uid
-            builder?.bridgeConnectionObserver = self
-            builder?.add(self)
-        }, withAppName: "HuePlayground", withDeviceName: "benjamins-macbook")
     }
 }
 

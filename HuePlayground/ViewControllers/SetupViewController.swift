@@ -13,29 +13,6 @@ class SetupViewController: NSViewController {
     private enum ButtonTitle: String {
         case Connect = "Connect"
         case Retry = "Retry"
-        case Reconnect = "Reconnect"
-        case None = ""
-    }
-    
-    /**
-     Perform a countdown from start seconds to 0.
-     
-     - start: leng of timer in seconds
-     - progress: callback called every second of the timer
-     */
-    private static func countdown(start: Int = 30, progress: @escaping (Int) -> Void) {
-        var timeRemaining: Int = start
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
-            // decrement time remaining
-            timeRemaining -= 1
-            // increment progress indicator
-            progress(timeRemaining)
-            
-            // end of timer?
-            if timeRemaining == 0 {
-                timer.invalidate()
-            }
-        }
     }
 
     var bridges: [PHSBridgeInfo] = []
@@ -50,17 +27,20 @@ class SetupViewController: NSViewController {
     @IBAction func buttonPress(_ sender: Any) {
         switch button.title {
         case ButtonTitle.Connect.rawValue:
+            // connect to the selected bridge
+            connecting()
             break
         case ButtonTitle.Retry.rawValue:
-            break
-        case ButtonTitle.Reconnect.rawValue:
+            // retry discovering bridges
+            searching()
             break
         default:
             return
         }
     }
     
-    //MARK: Methods
+    /**
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,6 +49,8 @@ class SetupViewController: NSViewController {
         tableView.dataSource = self
     }
     
+    /**
+    */
     override func viewDidAppear() {
         super.viewDidAppear()
         discoverBridges()
@@ -78,50 +60,65 @@ class SetupViewController: NSViewController {
     Starts or stop self.progressIndicator either in
     determinate or indeterminate mode.
     */
-    private func switchProgressIndicator(start: Bool = true, indeterminate: Bool = false) {
+    private func switchProgressIndicator(start: Bool = true) {
         progressIndicator.isHidden = !start
-        progressIndicator.isIndeterminate = indeterminate
         
         if start { progressIndicator.startAnimation(self) }
         else { progressIndicator.stopAnimation(self)}
         
     }
     
+    /**
+    */
     private func searching() {
         button.isHidden = true
         label.stringValue = "Searching for bridges..."
-        switchProgressIndicator(start: true, indeterminate: true)
+        switchProgressIndicator(start: true)
     }
     
+    /**
+    */
     private func listingBridges() {
         button.isHidden = false
+        button.isEnabled = false
         button.title = ButtonTitle.Connect.rawValue
         label.stringValue = "Select a bridge to connect to."
         switchProgressIndicator(start: false)
         tableView.reloadData()
     }
     
+    /**
+    */
+    private func bridgeSelected() {
+        button.isEnabled = true
+    }
+    
+    /**
+    */
     private func noBridgesListed() {
         button.isHidden = false
         button.title = ButtonTitle.Retry.rawValue
         label.stringValue = "No bridges found"
     }
     
+    /**
+     */
     private func connecting() {
-        button.isHidden = true
-        label.stringValue = "connecting to bridge..."
-        switchProgressIndicator(start: true, indeterminate: false)
-        SetupViewController.countdown(start: 30) { timeRemaining in
-            self.progressIndicator.increment(by: 30.0 / 100.0)
-            if timeRemaining == 0 { self.connectionFailed() }
+        // connect to bridge by passing selected bridge info
+        // from the setup view back to the lights view. this
+        // will trigger the dismissal of the setup view and
+        // an attempted connected to the given bridge
+        if let parent = self.presenting as? LightsViewController {
+            parent.buildAndConnect(with: getSelectedBridgeInfo()!, sender: self)
         }
     }
     
-    private func connectionFailed() {
-        button.isHidden = false
-        button.title = ButtonTitle.Reconnect.rawValue
-        label.stringValue = "Connection Failed."
-        switchProgressIndicator(start: false)
+    /**
+     */
+    private func getSelectedBridgeInfo() -> PHSBridgeInfo? {
+        let selectedRow = tableView.selectedRow
+        if selectedRow != -1 { return bridges[selectedRow] }
+        else { return nil }
     }
     
     /**
@@ -143,6 +140,8 @@ class SetupViewController: NSViewController {
     }
 }
 
+/**
+ */
 extension SetupViewController: NSTableViewDataSource {
     /**
      give number of rows in table view
@@ -152,14 +151,18 @@ extension SetupViewController: NSTableViewDataSource {
     }
 }
 
+/**
+ */
 extension SetupViewController: NSTableViewDelegate {
     // table cell identifiers
     private enum TableCellIdentifier {
         static let IPAddressCell = "IPAddress"
         static let UidCell = "UniqueID"
     }
-    
-    // return a cell for a specific value at the given row and column
+
+    /**
+     return a cell for a specific value at the given row and column
+    */
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         print("getting info for a table cell")
         var cellId: String?
@@ -188,5 +191,19 @@ extension SetupViewController: NSTableViewDelegate {
             return cell
         }
         return nil
+    }
+    
+    /**
+     Listen for table row selection
+    */
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        let selectedRow = tableView.selectedRow
+        
+        // exclude -1, which means no rows are selected
+        if selectedRow >= 0 {
+            bridgeSelected()
+        } else {
+            listingBridges()
+        }
     }
 }
