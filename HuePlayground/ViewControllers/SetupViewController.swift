@@ -10,18 +10,56 @@ import Cocoa
 
 class SetupViewController: NSViewController {
     
-    //MARK: Properties
-    var bridges: [PHSBridgeInfo] = []
+    private enum ButtonTitle: String {
+        case Connect = "Connect"
+        case Retry = "Retry"
+        case Reconnect = "Reconnect"
+        case None = ""
+    }
     
-
-    @IBOutlet weak var tableView: NSTableView!
-    @IBOutlet weak var spinner: NSProgressIndicator!
-    
-    //MARK: Actions
-    @IBAction func retryDiscoverBridges(_ sender: Any) {
-        discoverBridges()
+    /**
+     Perform a countdown from start seconds to 0.
+     
+     - start: leng of timer in seconds
+     - progress: callback called every second of the timer
+     */
+    private static func countdown(start: Int = 30, progress: @escaping (Int) -> Void) {
+        var timeRemaining: Int = start
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
+            // decrement time remaining
+            timeRemaining -= 1
+            // increment progress indicator
+            progress(timeRemaining)
+            
+            // end of timer?
+            if timeRemaining == 0 {
+                timer.invalidate()
+            }
+        }
     }
 
+    var bridges: [PHSBridgeInfo] = []
+    
+    //MARK: Properties
+    @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var label: NSTextField!
+    @IBOutlet weak var progressIndicator: NSProgressIndicator!
+    @IBOutlet weak var button: NSButton!
+    
+    //MARK: Actions
+    @IBAction func buttonPress(_ sender: Any) {
+        switch button.title {
+        case ButtonTitle.Connect.rawValue:
+            break
+        case ButtonTitle.Retry.rawValue:
+            break
+        case ButtonTitle.Reconnect.rawValue:
+            break
+        default:
+            return
+        }
+    }
+    
     //MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,74 +70,78 @@ class SetupViewController: NSViewController {
     }
     
     override func viewDidAppear() {
-        // discover bridges
+        super.viewDidAppear()
         discoverBridges()
     }
     
     /**
-        discover available hue bridges with the given PHSBridgeDiscoverOption. If no discover option is
-        given, then function will iterate through the avaiable discovery options and attempt to find bridges.
-        If a search yields results, those results are kept. Otherwise, this method is called again with
-        the next available option until all discovery options are exhausted.
+    Starts or stop self.progressIndicator either in
+    determinate or indeterminate mode.
+    */
+    private func switchProgressIndicator(start: Bool = true, indeterminate: Bool = false) {
+        progressIndicator.isHidden = !start
+        progressIndicator.isIndeterminate = indeterminate
+        
+        if start { progressIndicator.startAnimation(self) }
+        else { progressIndicator.stopAnimation(self)}
+        
+    }
+    
+    private func searching() {
+        button.isHidden = true
+        label.stringValue = "Searching for bridges..."
+        switchProgressIndicator(start: true, indeterminate: true)
+    }
+    
+    private func listingBridges() {
+        button.isHidden = false
+        button.title = ButtonTitle.Connect.rawValue
+        label.stringValue = "Select a bridge to connect to."
+        switchProgressIndicator(start: false)
+        tableView.reloadData()
+    }
+    
+    private func noBridgesListed() {
+        button.isHidden = false
+        button.title = ButtonTitle.Retry.rawValue
+        label.stringValue = "No bridges found"
+    }
+    
+    private func connecting() {
+        button.isHidden = true
+        label.stringValue = "connecting to bridge..."
+        switchProgressIndicator(start: true, indeterminate: false)
+        SetupViewController.countdown(start: 30) { timeRemaining in
+            self.progressIndicator.increment(by: 30.0 / 100.0)
+            if timeRemaining == 0 { self.connectionFailed() }
+        }
+    }
+    
+    private func connectionFailed() {
+        button.isHidden = false
+        button.title = ButtonTitle.Reconnect.rawValue
+        label.stringValue = "Connection Failed."
+        switchProgressIndicator(start: false)
+    }
+    
+    /**
+    discover available hue bridges with the given PHSBridgeDiscoverOption. If no discover option is
+    given, then function will iterate through the avaiable discovery options and attempt to find bridges.
+    If a search yields results, those results are kept. Otherwise, this method is called again with
+    the next available option until all discovery options are exhausted.
     */
     func discoverBridges() {
-        // show the indefinite progress indicator popover
-        print("showing spinner")
-        self.spinner.startAnimation(self)
-//        self.label.stringValue = "Searching for bridges..."
+        searching()
         
         // search for bridges
         BridgeDiscoveryUtil().search({ bridges in
             self.bridges = bridges
-            
-            // hide the indefinite progress indicator popover
-            print("stopping spinner")
-            self.spinner.stopAnimation(self)
-            
             // update helper text indicating next user action
-//            if self.bridges.count == 0 {
-//                self.label.stringValue = "No bridges were found on this network."
-//            } else {
-//                self.label.stringValue = "Please select a bridge to connect to."
-//            }
-            
-            // reload table data
-            self.tableView.reloadData()
+            if self.bridges.count == 0 { self.noBridgesListed() }
+            else { self.listingBridges() }
         })
     }
-    
-    /**
-        Perform a countdown from start seconds
-        to 0
-    */
-//    func countdown(start: Int = 30) {
-//        var timeRemaining: Int = start
-//        let stepSize: Double = 100.0 / Double(start)
-//        self.progressIndicator.startAnimation(nil)
-//
-//        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
-//            // decrement time remaining
-//            timeRemaining -= 1
-//            // increment progress indicator
-//            self.progressIndicator.increment(by: stepSize)
-//
-//            // end of timer?
-//            if timeRemaining == 0 {
-//                timer.invalidate()
-//                timeoutAlert()
-//            }
-//        }
-//    }
 }
-
-/**
- Simple modal to inform users of a timeout connecting to bridge
- */
-//func timeoutAlert() {
-//    let alert = NSAlert()
-//    alert.messageText = "Timeout connecting to bridge. Please try again"
-//    alert.runModal()
-//}
 
 extension SetupViewController: NSTableViewDataSource {
     /**
@@ -112,7 +154,7 @@ extension SetupViewController: NSTableViewDataSource {
 
 extension SetupViewController: NSTableViewDelegate {
     // table cell identifiers
-    fileprivate enum TableCellIdentifier {
+    private enum TableCellIdentifier {
         static let IPAddressCell = "IPAddress"
         static let UidCell = "UniqueID"
     }
@@ -132,7 +174,7 @@ extension SetupViewController: NSTableViewDelegate {
         switch tableColumn {
         case tableView.tableColumns[0]?:
             text = bridge.ipAddress
-            cellId = TableCellIdentifier.IPAddressCell
+             cellId = TableCellIdentifier.IPAddressCell
         case tableView.tableColumns[1]?:
             text = bridge.uid
             cellId = TableCellIdentifier.UidCell
