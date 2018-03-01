@@ -1,0 +1,3 @@
+[submodule "SSDPClient"]
+	path = SSDPClient
+	url = https://github.com/pierrickrouxel/SSDPClient.git
