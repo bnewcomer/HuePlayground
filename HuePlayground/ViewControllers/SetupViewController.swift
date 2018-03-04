@@ -96,6 +96,7 @@ class SetupViewController: NSViewController {
     /**
     */
     private func noBridgesListed() {
+        switchProgressIndicator(start: false)
         button.isHidden = false
         button.title = ButtonTitle.Retry.rawValue
         label.stringValue = "No bridges found"
@@ -108,7 +109,7 @@ class SetupViewController: NSViewController {
         // from the setup view back to the lights view. this
         // will trigger the dismissal of the setup view and
         // an attempted connected to the given bridge
-        if let parent = self.presenting as? LightsViewController {
+        if let parent = self.presenting as? InfoViewController {
             parent.buildAndConnect(with: getSelectedBridgeInfo()!, sender: self)
         }
     }

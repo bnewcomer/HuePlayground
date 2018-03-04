@@ -13,13 +13,20 @@
 		E627403A2046019400629802 /* BridgeDiscoveryUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62740392046019400629802 /* BridgeDiscoveryUtil.swift */; };
 		E636448A20421535009987E3 /* HueSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E636448920421535009987E3 /* HueSDK.framework */; };
 		E636448B20421535009987E3 /* HueSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E636448920421535009987E3 /* HueSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E636449220421963009987E3 /* LightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E636449120421963009987E3 /* LightsViewController.swift */; };
 		E63644942042197E009987E3 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63644932042197E009987E3 /* SetupViewController.swift */; };
 		E6987DB02040C472002FAC5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6987DAF2040C472002FAC5B /* AppDelegate.swift */; };
 		E6987DB42040C472002FAC5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6987DB32040C472002FAC5B /* Assets.xcassets */; };
 		E6987DB72040C472002FAC5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6987DB52040C472002FAC5B /* Main.storyboard */; };
 		E6987DC32040C472002FAC5B /* HuePlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6987DC22040C472002FAC5B /* HuePlaygroundTests.swift */; };
 		E6987DCE2040C472002FAC5B /* HuePlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6987DCD2040C472002FAC5B /* HuePlaygroundUITests.swift */; };
+		E6DB0B37204C942800B08591 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DB0B36204C942800B08591 /* TabViewController.swift */; };
+		E6DB0B40204C944B00B08591 /* ScenesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DB0B3E204C944B00B08591 /* ScenesViewController.swift */; };
+		E6DB0B43204C947B00B08591 /* LightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DB0B42204C947B00B08591 /* LightsViewController.swift */; };
+		E6DB0B45204C951D00B08591 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DB0B44204C951D00B08591 /* InfoViewController.swift */; };
+		E6DB0B4B204C994200B08591 /* NaryTreeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6DB0B49204C994200B08591 /* NaryTreeView.xib */; };
+		E6DB0B50204C996800B08591 /* NaryTreeNode.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6DB0B4E204C996800B08591 /* NaryTreeNode.xib */; };
+		E6DB0B52204C9A8F00B08591 /* NaryTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DB0B51204C9A8F00B08591 /* NaryTreeNode.swift */; };
+		E6DB0B54204C9AA300B08591 /* NaryTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DB0B53204C9AA300B08591 /* NaryTreeView.swift */; };
 		E6F8BB6C204378BC0051D741 /* PHSBridgeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F8BB6B204378BC0051D741 /* PHSBridgeInfo.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,7 +98,6 @@
 		E636448220421160009987E3 /* libHueSDK.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libHueSDK.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		E636448920421535009987E3 /* HueSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HueSDK.framework; sourceTree = "<group>"; };
 		E636448D2042159B009987E3 /* HuePlayground-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HuePlayground-Bridging-Header.h"; sourceTree = "<group>"; };
-		E636449120421963009987E3 /* LightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightsViewController.swift; sourceTree = "<group>"; };
 		E63644932042197E009987E3 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		E6987DAC2040C472002FAC5B /* HuePlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HuePlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6987DAF2040C472002FAC5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +111,14 @@
 		E6987DC92040C472002FAC5B /* HuePlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HuePlaygroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6987DCD2040C472002FAC5B /* HuePlaygroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuePlaygroundUITests.swift; sourceTree = "<group>"; };
 		E6987DCF2040C472002FAC5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6DB0B36204C942800B08591 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		E6DB0B3E204C944B00B08591 /* ScenesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesViewController.swift; sourceTree = "<group>"; };
+		E6DB0B42204C947B00B08591 /* LightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightsViewController.swift; sourceTree = "<group>"; };
+		E6DB0B44204C951D00B08591 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		E6DB0B49204C994200B08591 /* NaryTreeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NaryTreeView.xib; sourceTree = "<group>"; };
+		E6DB0B4E204C996800B08591 /* NaryTreeNode.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NaryTreeNode.xib; sourceTree = "<group>"; };
+		E6DB0B51204C9A8F00B08591 /* NaryTreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaryTreeNode.swift; sourceTree = "<group>"; };
+		E6DB0B53204C9AA300B08591 /* NaryTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaryTreeView.swift; sourceTree = "<group>"; };
 		E6F8BB6B204378BC0051D741 /* PHSBridgeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHSBridgeInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,9 +179,12 @@
 		E63644902042191E009987E3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E636449120421963009987E3 /* LightsViewController.swift */,
 				E63644932042197E009987E3 /* SetupViewController.swift */,
 				E621D55320488DCF00488B54 /* BridgeConnectionViewController.swift */,
+				E6DB0B36204C942800B08591 /* TabViewController.swift */,
+				E6DB0B3E204C944B00B08591 /* ScenesViewController.swift */,
+				E6DB0B42204C947B00B08591 /* LightsViewController.swift */,
+				E6DB0B44204C951D00B08591 /* InfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -198,6 +215,7 @@
 		E6987DAE2040C472002FAC5B /* HuePlayground */ = {
 			isa = PBXGroup;
 			children = (
+				E6DB0B46204C98FE00B08591 /* Views */,
 				E62740382046016A00629802 /* Utils */,
 				E63644902042191E009987E3 /* ViewControllers */,
 				E6987DAF2040C472002FAC5B /* AppDelegate.swift */,
@@ -235,6 +253,33 @@
 				E60C8AE420479C3A0045EEC3 /* SwiftSSDP.xcodeproj */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6DB0B46204C98FE00B08591 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E6DB0B47204C990A00B08591 /* NaryTree */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E6DB0B47204C990A00B08591 /* NaryTree */ = {
+			isa = PBXGroup;
+			children = (
+				E6DB0B4C204C994C00B08591 /* NaryTreeNode */,
+				E6DB0B49204C994200B08591 /* NaryTreeView.xib */,
+				E6DB0B53204C9AA300B08591 /* NaryTreeView.swift */,
+			);
+			path = NaryTree;
+			sourceTree = "<group>";
+		};
+		E6DB0B4C204C994C00B08591 /* NaryTreeNode */ = {
+			isa = PBXGroup;
+			children = (
+				E6DB0B4E204C996800B08591 /* NaryTreeNode.xib */,
+				E6DB0B51204C9A8F00B08591 /* NaryTreeNode.swift */,
+			);
+			path = NaryTreeNode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,6 +467,8 @@
 			files = (
 				E6987DB42040C472002FAC5B /* Assets.xcassets in Resources */,
 				E6987DB72040C472002FAC5B /* Main.storyboard in Resources */,
+				E6DB0B4B204C994200B08591 /* NaryTreeView.xib in Resources */,
+				E6DB0B50204C996800B08591 /* NaryTreeNode.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,12 +500,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6DB0B43204C947B00B08591 /* LightsViewController.swift in Sources */,
+				E6DB0B45204C951D00B08591 /* InfoViewController.swift in Sources */,
 				E621D54C20488BF400488B54 /* BridgeBuilderUtil.swift in Sources */,
 				E621D55220488CD300488B54 /* BridgePersistenceUtil.swift in Sources */,
 				E63644942042197E009987E3 /* SetupViewController.swift in Sources */,
 				E621D55420488DCF00488B54 /* BridgeConnectionViewController.swift in Sources */,
 				E627403A2046019400629802 /* BridgeDiscoveryUtil.swift in Sources */,
-				E636449220421963009987E3 /* LightsViewController.swift in Sources */,
+				E6DB0B54204C9AA300B08591 /* NaryTreeView.swift in Sources */,
+				E6DB0B40204C944B00B08591 /* ScenesViewController.swift in Sources */,
+				E6DB0B37204C942800B08591 /* TabViewController.swift in Sources */,
+				E6DB0B52204C9A8F00B08591 /* NaryTreeNode.swift in Sources */,
 				E6F8BB6C204378BC0051D741 /* PHSBridgeInfo.swift in Sources */,
 				E6987DB02040C472002FAC5B /* AppDelegate.swift in Sources */,
 			);

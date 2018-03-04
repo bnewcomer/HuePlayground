@@ -694,42 +694,12 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="mst-HO-LZj" kind="relationship" relationship="window.shadowedContentViewController" id="8q6-JB-QaD"/>
+                        <segue destination="4uh-fi-wTl" kind="relationship" relationship="window.shadowedContentViewController" id="8bm-2D-Lzw"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
-        </scene>
-        <!--Lights View Controller-->
-        <scene sceneID="Q6a-Iu-Klm">
-            <objects>
-                <viewController id="mst-HO-LZj" customClass="LightsViewController" customModule="HuePlayground" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="NiW-VF-ujR">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yiH-1r-alf">
-                                <rect key="frame" x="172" y="132" width="107" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Randomize" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qye-ZN-Y1E">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="randomizeAllLights:" target="mst-HO-LZj" id="gwd-zn-3pi"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                    </view>
-                    <connections>
-                        <segue destination="3ei-X2-FHA" kind="sheet" identifier="showSetupView" id="aOi-p5-xco"/>
-                        <segue destination="ug4-J1-snX" kind="sheet" identifier="showBridgeConnectionView" id="tbh-pP-F6S"/>
-                    </connections>
-                </viewController>
-                <customObject id="Qel-ud-LBf" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="713" y="244"/>
         </scene>
         <!--Bridge Connection View Controller-->
         <scene sceneID="OqW-MQ-ehN">
@@ -739,12 +709,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZQF-lK-r89">
+                            <progressIndicator wantsLayer="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZQF-lK-r89">
                                 <rect key="frame" x="20" y="134" width="410" height="20"/>
                             </progressIndicator>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wTU-Os-SCN">
                                 <rect key="frame" x="18" y="173" width="414" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Connecting to bridge. Press the link button on your bridge." id="8YB-BS-pLg">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Connecting to bridge..." id="8YB-BS-pLg">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -761,12 +731,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="label" destination="wTU-Os-SCN" id="Mep-f0-9Wz"/>
                         <outlet property="progressIndicator" destination="ZQF-lK-r89" id="Qee-d9-YnH"/>
                     </connections>
                 </viewController>
                 <customObject id="u0P-06-64k" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="713" y="709"/>
+            <point key="canvasLocation" x="1770" y="59"/>
         </scene>
         <!--Setup View Controller-->
         <scene sceneID="jZA-BK-6oV">
@@ -929,7 +900,95 @@
                 </viewController>
                 <customObject id="vYy-YR-DWl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1325.5" y="244"/>
+            <point key="canvasLocation" x="1781" y="-341"/>
+        </scene>
+        <!--Tab View Controller-->
+        <scene sceneID="Tq2-RH-UlW">
+            <objects>
+                <tabViewController selectedTabViewItemIndex="0" id="4uh-fi-wTl" customClass="TabViewController" customModule="HuePlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem label="Info" identifier="" id="EQL-UG-YqE"/>
+                        <tabViewItem label="Lights" identifier="" id="fWF-zJ-YT9"/>
+                        <tabViewItem label="Scenes" id="h5v-JJ-6Ki"/>
+                    </tabViewItems>
+                    <tabView key="tabView" type="noTabsNoBorder" id="bAL-Oj-kuR">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <tabViewItems/>
+                        <connections>
+                            <outlet property="delegate" destination="4uh-fi-wTl" id="ysf-Mv-y9W"/>
+                        </connections>
+                    </tabView>
+                    <connections>
+                        <outlet property="tabView" destination="bAL-Oj-kuR" id="lym-TB-K0U"/>
+                        <segue destination="a4Z-6G-R65" kind="relationship" relationship="tabItems" id="wOb-lB-B2O"/>
+                        <segue destination="220-Zz-tXA" kind="relationship" relationship="tabItems" id="T1N-ZQ-Zrn"/>
+                        <segue destination="rE6-Af-ltw" kind="relationship" relationship="tabItems" id="zZf-w2-UfC"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="g6e-wT-kHe" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="650" y="241"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="M0H-2F-7Vd">
+            <objects>
+                <viewController id="a4Z-6G-R65" customClass="InfoViewController" customModule="HuePlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="UaG-6x-5Mn">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VTx-ug-oAy">
+                                <rect key="frame" x="18" y="263" width="414" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" placeholderString="Not Connected" id="oHN-M1-LFo">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="VTx-ug-oAy" firstAttribute="leading" secondItem="UaG-6x-5Mn" secondAttribute="leading" constant="20" id="iQX-iW-tkQ"/>
+                            <constraint firstAttribute="trailing" secondItem="VTx-ug-oAy" secondAttribute="trailing" constant="20" id="ua4-1a-gSL"/>
+                            <constraint firstItem="VTx-ug-oAy" firstAttribute="top" secondItem="UaG-6x-5Mn" secondAttribute="top" constant="20" id="yHF-q4-3aC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bridgeLabel" destination="VTx-ug-oAy" id="rSR-zI-Svq"/>
+                        <segue destination="3ei-X2-FHA" kind="sheet" identifier="showSetupView" id="0Es-QQ-CLb"/>
+                        <segue destination="ug4-J1-snX" kind="sheet" identifier="showBridgeConnectionView" id="cte-Og-XX3"/>
+                    </connections>
+                </viewController>
+                <customObject id="KLx-0Y-0oe" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212" y="-168"/>
+        </scene>
+        <!--Lights View Controller-->
+        <scene sceneID="6Ib-Mt-BYs">
+            <objects>
+                <viewController id="220-Zz-tXA" customClass="LightsViewController" customModule="HuePlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="yu9-UA-dEH">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="vCk-6I-1G4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212" y="187"/>
+        </scene>
+        <!--Scenes View Controller-->
+        <scene sceneID="Pa9-gz-fHQ">
+            <objects>
+                <viewController id="rE6-Af-ltw" customClass="ScenesViewController" customModule="HuePlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Tlb-Di-hzc">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="epN-JI-UFR" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212" y="536"/>
         </scene>
     </scenes>
 </document>

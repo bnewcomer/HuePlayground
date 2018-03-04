@@ -12,12 +12,20 @@ class BridgeConnectionViewController: NSViewController {
     
     //MARK: Properties
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
+    @IBOutlet weak var label: NSTextField!
     
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        // begin countdown
-        countdown(start: 30, progress: updateProgressIndicator)
+        // begin countdown waiting for user to press bridge link
+        progressIndicator.stopAnimation(self)
+        progressIndicator.isIndeterminate = false
+        label.stringValue = "Connecting to bridge... press the link button to finish connecting"
+        
+        if let parent = self.presenting as? InfoViewController {
+            parent.bridge?.connect()
+            countdown(start: 30, progress: updateProgressIndicator)
+        }
     }
     
     override func viewDidDisappear() {
@@ -30,7 +38,7 @@ class BridgeConnectionViewController: NSViewController {
     /**
      Update the progress indicator with the new percentage
     */
-    private func updateProgressIndicator(percentage: Int) {
+    func updateProgressIndicator(percentage: Int) {
         progressIndicator.doubleValue = Double(percentage)
     }
     
@@ -40,19 +48,22 @@ class BridgeConnectionViewController: NSViewController {
      - start: leng of timer in seconds
      - progress: callback called every second of the timer
      */
-    private func countdown(start: Int = 30, progress: @escaping (Int) -> Void) {
+    func countdown(start: Int = 30, progress: @escaping (Int) -> Void) {
         var timeRemaining: Int = start
         
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             // decrement time remaining
             timeRemaining -= 1
             // increment progress indicator
+            print(Int(Double(start - timeRemaining) / Double(start) * 100.0))
             progress(Int(Double(start - timeRemaining) / Double(start) * 100.0))
             
             // end of timer?
             if timeRemaining == 0 {
                 timer.invalidate()
-                self.dismiss(self)
+                if let parent = self.presenting as? InfoViewController {
+                    parent.handleBridgeConnectionFailure()
+                }
             }
         }
     }

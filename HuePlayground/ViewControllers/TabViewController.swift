@@ -1,5 +1,5 @@
 //
-//  LightsViewController.swift
+//  TabViewController.swift
 //  HuePlayground
 //
 //  Created by Benjamin Newcomer on 3/4/18.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class LightsViewController: NSViewController {
+class TabViewController: NSTabViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
